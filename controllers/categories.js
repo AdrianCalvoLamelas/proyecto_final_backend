@@ -6,9 +6,8 @@ const categories = require("../models/categories");
  * @param {*} res 
  */
 const getItems = async (req, res) => {
-  const data = await categories.find({ type: "Frenos" });
-  console.log(data);
-  res.send({data});
+  const data = await categories.find({});
+  res.send(data);
 };
 
 /**

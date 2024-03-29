@@ -2,9 +2,15 @@ const mongoose = require("mongoose");
 
 const CategoriesSchema = new mongoose.Schema(
   {
-    type: {
+    key: {
       type: String,
       unique: true
+    },
+    name: {
+      type: String,
+    },
+    image: {
+      type: String,
     },
     sections: [{
       image: {
