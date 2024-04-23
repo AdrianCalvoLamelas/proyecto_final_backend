@@ -1,4 +1,4 @@
-const categories = require("../models/categories");
+const Categories = require("../models/categories");
 
 /**
  * Obtener listado de categorias
@@ -6,7 +6,7 @@ const categories = require("../models/categories");
  * @param {*} res 
  */
 const getItems = async (req, res) => {
-  const data = await categories.find({});
+  const data = await Categories.find({});
   res.send(data);
 };
 
@@ -25,7 +25,7 @@ const getItem = (req, res) => {};
 const createItem = async (req, res) => {
   const { body } = req;
 
-  const data = await categories.create(body);
+  const data = await Categories.create(body);
   res.send({data});
 };
 

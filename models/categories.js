@@ -18,6 +18,9 @@ const CategoriesSchema = new mongoose.Schema(
       },
       title: {
         type: String
+      },
+      key: {
+        type: String
       }
     }]
   },
