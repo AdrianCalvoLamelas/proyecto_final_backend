@@ -7,7 +7,6 @@ const articles = require("../models/articles");
  */
 const getItems = async (req, res) => {
   const { subcategorieType } = req.query;
-console.log(subcategorieType)
   const data = await articles.find({subcategorieType});
   res.send(data);
 };

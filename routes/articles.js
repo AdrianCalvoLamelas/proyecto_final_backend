@@ -1,11 +1,17 @@
 const express = require("express");
 const router = express.Router();
-const { getItems, getItem, createItem } = require("../controllers/articles");
+const { validatorCreateItem } = require("../validators/articles");
+const { authMiddleware } = require("../middleware/authMiddleware");
+const { getItems, getItem, createItem, deleteItem, updateItem } = require("../controllers/articles");
 
-router.get("/", getItems);
+router.get("/", authMiddleware, getItems);
 
-router.get("/:id", getItem);
+router.get("/:id", authMiddleware, getItem);
 
-router.post("/", createItem);
+router.post("/", authMiddleware, validatorCreateItem, createItem);
+
+router.delete("/:id", authMiddleware, deleteItem);
+
+router.put("/:id", authMiddleware, updateItem)
 
 module.exports = router

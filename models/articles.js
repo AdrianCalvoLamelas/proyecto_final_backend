@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 
 const ArticlesSchema = new mongoose.Schema(
   {
+    _id: {
+      type: mongoose.Schema.Types.ObjectId,
+      default: () => new mongoose.Types.ObjectId(),
+    },
     subcategorieType: {
       type: String,
     },
@@ -23,6 +27,12 @@ const ArticlesSchema = new mongoose.Schema(
     image: {
       type: String,
     },
+    vehicleName: {
+      type: String,
+    },
+    vehicleModel: {
+      type: String,
+    }
   },
   {
     timestamps: true

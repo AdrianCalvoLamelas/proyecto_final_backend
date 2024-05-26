@@ -11,6 +11,7 @@ const port = 3001;
 app.use("/api/categories", require("./routes/categories"));
 app.use("/api/articles", require("./routes/articles"));
 app.use("/api/users", require("./routes/users"));
+app.use("/api/vehicles", require("./routes/vehicles"));
 
 app.listen(port, () => {
   console.log("Tu app está lista en http://localhost:" + port);
